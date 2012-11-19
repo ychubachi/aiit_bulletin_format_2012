@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Nov 19 12:50:46 JST 2012
+markTmpDer=true
+builderNum=4
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=AIITBulletinTexFormat2012.tex
+outputFile=AIITBulletinTexFormat2012.pdf
+langSpell=en
+markDer=true
+srcDir=
