@@ -1,159 +1,76 @@
-%% multicols を用いたため figure 環境，table 環境は使えません． 
-%% すると通常の caption が使えなくなります．
-%% 代わりに，\figcaption，\tblcaption を用いて
-%% 図と表の caption をつけて下さい．
-\documentclass[a4j,9pt,twoside]{jarticle}
+%% 2012-11-19改定（中鉢）
+%% - 書式設定を「kiyou.sty」ファイルに移動しました
+
+\documentclass[a4j,twoside]{jarticle}
+\usepackage{kiyou} % AIIT紀要スタイルの読み込み
+%% 必要なパッケージを追加してください
 \usepackage{graphicx}
-\usepackage{latexsym}
-\usepackage{amsmath}    
-\usepackage{amsthm}
-\usepackage{multicol}
-\usepackage{fancyhdr}
-\usepackage{newcent}
-\normalfont
+%\usepackage{latexsym}
+%\usepackage{amsmath}
+%\usepackage{amsthm}
 
-\def\fnum@figure{Fig. \thefigure} 
-\def\fnum@table{Table \thetable} 
-\makeatletter
-\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
-\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
-\renewcommand{\section}{\@startsection{section}{1}{\z@}%
-   {1.5\Cvs \@plus.5\Cvs \@minus.2\Cvs}%
-   {.3\Cvs \@plus.3\Cvs}%
-   {\reset@font\normalsize\bfseries}}
-\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-   {1\Cvs \@plus.5\Cvs \@minus.2\Cvs}%
-   {.01\Cvs \@plus.01\Cvs}%
-   {\reset@font\small\bfseries}}
-\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
-   {1\Cvs \@plus.5\Cvs \@minus.2\Cvs}%
-   {.01\Cvs \@plus.01\Cvs}%
-   {\reset@font\small\bfseries}}
-\long\def\@makecaption#1#2{%
-  \small%% add this line
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{#1: #2}%
-  \ifdim \wd\@tempboxa >\hsize
-    #1: #2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
-\renewcommand{\thesection}{\arabic{section}.}
-\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
-\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
-\makeatother
-
-
-
-\setlength{\oddsidemargin}{-1.4mm}
-\setlength{\evensidemargin}{-5.4mm}
-\setlength{\textwidth}{16.6cm}
-\setlength{\topmargin}{-7.4mm}
-\setlength{\headsep}{4.5mm}
-\setlength{\textheight}{24.5cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% タイトル 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{fancy}
-\lhead[{\small \thepage\hspace{2zw}
-%ヘッダー・著者名 
-産技太郎，産技花子
-}]{}
-\chead[]{} 
-\rhead[]{{\small
-%ヘッダー・論文タイトル
-産技大紀要フォーマットについて
-\hspace{2zw}\thepage}}
-\lfoot[]{} 
-\cfoot[]{} 
-\rfoot[]{} 
-\renewcommand{\headrulewidth}{0pt} 
-\renewcommand{\refname}{{\normalsize \bf 参考文献}}
+%% 英語でキャプションを記載する場合は下記2行のコメントを外してください
+% \renewcommand{\figurename}{Fig.}
+% \renewcommand{\tablename}{Table.}
 
 \begin{document}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}{\fnsymbol{footnote}}
-
-\vspace{-0.78cm}
-
+\pagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 和文標題・英文標題・アブストラクト・キーをー度
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
-\vspace{0.5cm}
-
-{\LARGE \bf 
-% 論文タイトル
-産技大紀要フォーマットについて
-}
-
-\vspace{.6cm}
-
-{\large 
-% 論文著者名
+{\LARGE
+%% 論文標題
+産技大紀要フォーマットについて(2012-11-19版)
+}\vskip\baselineskip{\large 
+%% 和文著者名
 産　技　太　郎$^{*}$・産　技　花　子$^{**}$
-}
-
-\vspace{.6cm}
-
-{\Large 
-% 論文英語タイトル
+}\vskip\baselineskip{\Large 
+%% 論文英語タイトル
 Style and Layout of an AIIT Bulletin
-}\\
-
-\vspace{.4cm}
-
-{\large 
-% 論文英語著者名
+}\vskip\baselineskip{\large 
+%% 英文著者名
 Taro Sangi$^{*}$ and Hanako Sangi$^{**}$
-}
-
-\vspace{.4cm}
+}\vskip\baselineskip
 {\large Abstract}
 \end{center}
 
-\vspace{-2ex}
-\noindent
-{\normalsize
-% アブストラクト
+{\normalsize\noindent
+%% アブストラクト
 Abstract in English. (approx. 100 Words) 
-\vspace{.3cm}
-
-\noindent
-Keywords: 
-% キーワード
+}\vskip\baselineskip{\normalsize \noindent Keywords: 
+%% キーワード
 Keywords in English. (approx. 5 Keywords)
-}
+}\vskip\baselineskip
 
-\vspace{.5cm}
-
-\begin{multicols}{2}
-\small
-\setlength{\skip\footins}{1.7cm}
-\setlength{\baselineskip}{14.75pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 送付日・著者所属
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \footnotetext{\hspace{-4.5ex}
-% 送付日
+%% 送付日
 Received on September 25, 2010.
 }
 \footnotetext{\hspace{-4.5ex}
-% 著者所属 1
-$^{*}$ 産業技術研究科, School of Industrial Technology, AIIT
+%% 著者所属 1
+$^{*}$ 産業技術大学院大学産業技術研究科, School of Industrial Technology, AIIT
 }
 \footnotetext{\hspace{-4.5ex}
-% 著者所属 2
+%% 著者所属 2
 $^{**}$ 首都大学東京，システムデザイン研究科， 
 Graduate School of System Design, Tokyo Metropolitan University
 }
-\footnotetext{\vspace{-8mm}} % 消すな
 
-\pagestyle{empty}
-
+\renewcommand{\thefootnote}{*\arabic{footnote}}
+\setcounter{footnote}{0}
+\begin{multicols}{2} % 2段組の開始
+\small % 本文を9ptにする
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ここから本文
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{はじめに}
 本稿では産業技術大学院大学紀要のフォーマットについて記す．
-Tex のフォーマットを使う執筆者はこのファイルの設定を変えずに，
+\LaTeX のフォーマットを使う執筆者は %このファイルの設定を変えずに，
 このファイルの中身を書き換えて使うこと．
 
 \section{標題等ついて}
@@ -173,7 +90,6 @@ Tex のフォーマットを使う執筆者はこのファイルの設定を変�
 別紙産技大紀要カメラレディ用見本に従って，[和文標題，和文著者名，英文標
 題，英文著者名，英文アブストラクト，英文キーワード，所属]の割付を行う．
 
-
 \section{本文について}
 
 \subsection{余白}
@@ -188,28 +104,24 @@ Tex のフォーマットを使う執筆者はこのファイルの設定を変�
 
 \section{図・表について}
 \subsection{キャプション}
-図・表には，図1，図2，表1，表2 のように論文全体で通し番号をつけること．
+図・表には，図\ref{fig:AIIT}，図2，
+表\ref{tab:cost2}，表2 のように論文全体で通し番号をつけること．
 表のキャプションは表の上に，図のキャプションは図の下につけること．図・表
 ともに配置は中央揃えにすること．英文の場合には，Fig. 1，Fig. 2，Table 1，
 Table 2のように，番号をつけること．通し番号，標題は本文と同じ書体を使用
-すること．multicols を用いたため figure 環境，table 環境は使えない．
-通常の caption が使えないため．代わりに figcaption，tblcaption を用いて
+すること．
+
+multicols を用いたため figure 環境，table 環境は使えない．
+通常の caption が使えないため．代わりに \textbackslash figcaption，
+\textbackslash tblcaption を用いて
 図と表の caption をつけること．以下に例を示す．
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                               %%%
-%%%                     Fig                       %%%
-%%%                                               %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{center}
-\scalebox{.2}{\includegraphics{AIIT_Symbol.eps}}
+\includegraphics[width=0.3\textwidth]{AIIT_Symbol.eps}
 \figcaption{図のキャプション}
-\label{fig:VFS}
+\label{fig:AIIT}
 \end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                               %%%
-%%%                    Table                      %%%
-%%%                                               %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \tblcaption{表のキャプション}
 \label{tab:cost2}
 \begin{center}
@@ -257,13 +169,6 @@ John Wiley \& Sons, 2006.
 \bibitem{Asa02Ar}
 有本 卓, 新版 ロボットの力学と制御, 朝倉書店, 2002. 
 \end{thebibliography}
-
-
-
-
-
-
-
 
 \newpage % 消さないで
 
