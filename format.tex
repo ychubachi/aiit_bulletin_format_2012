@@ -16,12 +16,12 @@
 \begin{document}
 \pagestyle{empty}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% 和文標題・英文標題・アブストラクト・キーをー度
+%% 和文標題・英文標題・アブストラクト・キーワード
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{center}
 {\LARGE
 %% 論文標題
-産技大紀要フォーマットについて(2012-11-19版)
+産技大紀要フォーマットについて(2012-11-22版)
 }\vskip\baselineskip{\large 
 %% 和文著者名
 産　技　太　郎$^{*}$・産　技　花　子$^{**}$
@@ -43,17 +43,17 @@ Abstract in English. (approx. 100 Words)
 Keywords in English. (approx. 5 Keywords)
 }\vskip\baselineskip
 
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 送付日・著者所属
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \footnotetext{\hspace{-4.5ex}
 %% 送付日
-Received on September 25, 2010.
+Received on September 30, 2012.
 }
 \footnotetext{\hspace{-4.5ex}
 %% 著者所属 1
-$^{*}$ 産業技術大学院大学産業技術研究科, School of Industrial Technology, AIIT
+$^{*}$ 産業技術大学院大学，産業技術研究科, School of Industrial Technology, AIIT
 }
 \footnotetext{\hspace{-4.5ex}
 %% 著者所属 2
@@ -65,13 +65,16 @@ Graduate School of System Design, Tokyo Metropolitan University
 \setcounter{footnote}{0}
 \begin{multicols}{2} % 2段組の開始
 \small % 本文を9ptにする
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ここから本文
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{はじめに}
 本稿では産業技術大学院大学紀要のフォーマットについて記す．
-\LaTeX のフォーマットを使う執筆者は %このファイルの設定を変えずに，
-このファイルの中身を書き換えて使うこと．
+
+\LaTeX のフォーマットを使う執筆者は
+この``format.tex''ファイルの中身を書き換えて使うこと．
+詳細な書式は``kiyou.sty''ファイルで定義しており，このファイルを変更してはならない．
 
 \section{標題等ついて}
 \subsection{原稿}
@@ -147,8 +150,6 @@ $A_{4}$ & $B_{4}$ & $C_{4}$ \\ \hline
 \section{おわりに}
 本稿では産業技術大学院大学紀要のフォーマットについて記した．
 
-
-
 \begin{thebibliography}{99}
 \bibitem{TRA96HuHaCo} 
 S. Hutchinson, G. D. Hager and P. I. Corke,
@@ -171,7 +172,6 @@ John Wiley \& Sons, 2006.
 \end{thebibliography}
 
 \newpage % 消さないで
-
 \end{multicols}
 \end{document}
 
